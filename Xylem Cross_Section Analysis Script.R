@@ -30,7 +30,7 @@ library(dbscan)
 #enter the name of ".txt" file here
 #Such file is obtained with ImageJ from the "Bare Outlines" picture produced by the "Analyse Particules" tool
 #then export X and Y coordinates using the  Analyze > Tools > Save XY Coordinates... in ImageJ (FIJI is preferred) to create the .txt file
-Sample = "Drawing"
+Sample = "demo_set"
 #creating the path to load the data
 #here the demo_set.txt is just on "D/:" but it might differ for you
 path <- paste("D:/",paste(Sample,".txt", sep = ""), sep = "")
@@ -49,7 +49,7 @@ Ax = 1.236521
 #CWmin is the theoretical minimum distance between vessels (in pixel) (CWmin = 3 in my case)
 #CWmin is the intercept of the regression line between the double vessel wall thichness (Tvw)
 #and the sum of the diameter of vessel being in contact      
-CWmin = 3
+CWmin = 2
 #TvwI is the slope of the regression described above, 0.05 in the plant species (Vitis vinifera) displayed here
 #These parameters will be used further on to weight the distance
 #at which a contact between vessels will be detected
@@ -136,7 +136,6 @@ summat = function(x){
   return(D)
 }
 
-i=1
 #This loop will deal with vessel's groups (found with dbscan) one by one
 #It does detect pixels below a weighted distance with the vessel's group and return it to df1$Pix_contact column
 #Then it performs an hclust on a matrix which is the difference between the distance matrix of pixels and
