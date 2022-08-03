@@ -49,7 +49,7 @@ Ax = 1.236521
 #CWmin is the theoretical minimum distance between vessels (in pixel) (CWmin = 3 in my case)
 #CWmin is the intercept of the regression line between the double vessel wall thichness (Tvw)
 #and the sum of the diameter of vessel being in contact      
-CWmin = 2
+CWmin = 3
 #TvwI is the slope of the regression described above, 0.05 in the plant species (Vitis vinifera) displayed here
 #These parameters will be used further on to weight the distance
 #at which a contact between vessels will be detected
@@ -58,8 +58,8 @@ TvwI=0.05
 Scale=0.5507
 #Cl1 is the distance (in pixels) we will use to extract clusters of pixels
 #corresponding to individual vessels from the dbscan analysis
-#Cl1=3 should work in any case 
-Cl1 = 3
+#Cl1=2 should work in any case 
+Cl1 = 2
 #Cl2 is the distance (in pixels) we will use to extract clusters of pixels
 #corresponding to groups of vessels with dbscan
 #Cl2 might depend on the species, picture resolution, and so on...
